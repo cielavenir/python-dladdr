@@ -11,12 +11,7 @@ class DlInfo(ctypes.Structure):
         ('dli_saddr', ctypes.c_void_p),
     ]
 
-if sys.platform in ('darwin', 'ios',):
-    libcname = 'libSystem.B.dylib'
-else:
-    libcname = 'libc.so.6'
-
-libc = ctypes.CDLL(libcname, use_errno=True)
+libc = ctypes.CDLL(None, use_errno=True)
 
 def dladdr(fp):
     dlinfo = DlInfo()

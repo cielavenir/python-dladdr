@@ -3,11 +3,12 @@ import ctypes
 from os.path import basename
 
 from dladdr import dladdr
-from dladdr import libcname  # only for testing
 
 if sys.platform in ('darwin', 'ios',):
+    libcname = 'libSystem.B.dylib'
     libname = 'libiconv.2.dylib'
 else:
+    libcname = 'libc.so.6'
     libname = 'libstdc++.so.6'
 
 def test_dladdr():
