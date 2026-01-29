@@ -7,6 +7,12 @@ from dladdr import dladdr
 if sys.platform in ('darwin', 'ios',):
     libcname = 'libSystem.B.dylib'
     libname = 'libiconv.2.dylib'
+elif sys.platform.startswith('freebsd'):
+    libcname = 'libc.so.7'
+    libname = 'libstdc++.so.6'
+elif sys.platform.startswith('android'):
+    libcname = 'libc.so'
+    libname = 'libstdc++.so'
 else:
     libcname = 'libc.so.6'
     libname = 'libstdc++.so.6'
