@@ -5,7 +5,7 @@ from os.path import basename
 from dladdr import dladdr
 
 if sys.platform in ('darwin', 'ios',):
-    libcname = 'libSystem.B.dylib'
+    libcname = 'libsystem_c.dylib'
     libname = 'libiconv.2.dylib'
 elif sys.platform.startswith('freebsd'):
     libcname = 'libc.so.7'
