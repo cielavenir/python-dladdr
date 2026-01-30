@@ -31,7 +31,7 @@ jobs:
     - name: Set up Pyston
       if: ${{ matrix.python-version == 'pyston' }}
       run: |
-        wget -O pyston.deb https://github.com/pyston/pyston/releases/download/pyston_2.3.2/pyston_2.3.2_20.04.deb
+        wget -O pyston.deb https://github.com/pyston/pyston/releases/download/pyston_2.3.5/pyston_2.3.5_20.04.deb
         sudo apt update
         sudo apt install -y ./pyston.deb
         sudo ln -sf pyston /usr/bin/python
