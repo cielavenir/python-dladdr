@@ -20,7 +20,7 @@ def dladdr(fp):
     assert libc.dladdr(fp, ctypes.byref(dlinfo))
     return dlinfo
 
-if __name__ == '__main__':
+def _Main():
     import sys
     if len(sys.argv) < 2:
         print('dladdr.py soname func...')
@@ -45,3 +45,6 @@ if __name__ == '__main__':
             print('dlsym(%s) ok (%s)' % (funcname, dlinfo.dli_fname.decode('utf-8')))
         except AttributeError as e:
             print('dlsym(%s) failed (%s)' % (funcname, e))
+
+if __name__ == '__main__':
+    _Main()
